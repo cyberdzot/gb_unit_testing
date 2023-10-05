@@ -8,26 +8,26 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class UserTest {
-    User my_account;
-    UserRepository my_repository;
+    User myAccount;
+    UserRepository myRepository;
 
     @BeforeEach
     void initForTest() {
-        my_account = new User("Vovqa", "123");
-        my_repository = new UserRepository();
+        myAccount = new User("Vovqa", "123");
+        myRepository = new UserRepository();
     }
 
     @ParameterizedTest
     @CsvSource({"Vovqa, 123"})
-    void isUserAuthorized(String input_name, String input_pass) {
-        assertTrue(my_account.authenticate(input_name, input_pass));
+    void isUserAuthorized(String inputName, String inputPass) {
+        assertTrue(myAccount.authenticate(inputName, inputPass));
     }
 
     @ParameterizedTest
     @CsvSource({"Vovqa, 123"})
-    void isUserInRepository(String input_name, String input_pass) {
-        my_account.authenticate(input_name, input_pass);
-        my_repository.addUser(my_account);
-        assertTrue(my_repository.findByName(input_name));
+    void isUserInRepository(String inputName, String inputPass) {
+        myAccount.authenticate(inputName, inputPass);
+        myRepository.addUser(myAccount);
+        assertTrue(myRepository.findByName(inputName));
     }
 }
