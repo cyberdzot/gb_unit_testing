@@ -38,7 +38,7 @@ void testDeleteContact() {
 }
 
 @Test
-void testDeleteContact() {
+void testGetAllContacts() {
     // Интеграционный тест
     // проверяет вывод всех имеющихся контактов в базе данных
 }
