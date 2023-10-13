@@ -2,3 +2,5 @@
 /out
 /.idea
 /temp.txt
+/test/.pytest_cache/
+/.coverage
